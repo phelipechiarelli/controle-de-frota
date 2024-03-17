@@ -14,7 +14,7 @@ Run `node run dev` for a dev server. Navigate to `http://localhost:3000/`.
 [PrimeNG](https://primeng.org/installation)
 
 - Back-end
-[Express.js]([https://github.com/expressjs/cors](https://expressjs.com/en/starter/installing.html)
+[Express.js](https://expressjs.com/en/starter/installing.html)
 [Nodemon](https://github.com/remy/nodemon)
 [Cors](https://github.com/expressjs/cors)
 
