@@ -63,7 +63,6 @@ export class ListaFrotaComponent implements OnInit, OnDestroy {
     });
     this.getListaVeiculos();
     this.showDeleteToast(); 
-    console.log('Veículo excluído com sucesso');
   }
 
   ngOnDestroy(): void {
