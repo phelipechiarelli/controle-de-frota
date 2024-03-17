@@ -1,16 +1,16 @@
 # Controle de Frota
 CRUD feito com Angular, PrimeNG e Node.js
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0 and [Node.js](https://nodejs.org/en/download) version 20.11.1
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 17.3.0 e [Node.js](https://nodejs.org/en/download) versão 20.11.1
 
 ## Development server
 Front-end
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+Execute o comando `ng serve` ou `npx ng serve` para subir o servidor de desenvolvimento. Aceesse a url `http://localhost:4200/` para acessar o projeto. 
 
 Back-end
 
-Run `node run dev` for a dev server. Navigate to `http://localhost:3000/`.
+Execute o comando `node run dev` para subir o servidor de desenvolvimento. Aceesse a url `http://localhost:3000/` para acessar o projeto.
 
 # Dependencias instaladas
 Front-end
