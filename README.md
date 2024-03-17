@@ -1,4 +1,4 @@
-# controle-de-frota
+# Controle de Frota
 CRUD feito com Angular, PrimeNG e Node.js
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
@@ -10,11 +10,11 @@ Back-end
 Run `node run dev` for a dev server. Navigate to `http://localhost:3000/`.
 
 # Dependencias instaladas
-Front-end
+- Front-end
 [PrimeNG](https://primeng.org/installation)
 
-Back-end
-[Express.js]([https://github.com/expressjs/cors](https://expressjs.com/en/starter/installing.html))
+- Back-end
+[Express.js]([https://github.com/expressjs/cors](https://expressjs.com/en/starter/installing.html)
 [Nodemon](https://github.com/remy/nodemon)
 [Cors](https://github.com/expressjs/cors)
 
