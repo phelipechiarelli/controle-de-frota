@@ -1,6 +1,7 @@
 # Controle de Frota
 CRUD feito com Angular, PrimeNG e Node.js
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0 and [Node.js](https://nodejs.org/en/download) version 20.11.1
 
 ## Development server
 Front-end
