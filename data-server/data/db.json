@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "placa": "LLU8093",
+        "chassi": "8gEPb2uYw3Xv21956",
+        "renavam": "09785274964",
+        "modelo": "Logan Privilege 1.6 16v",
+        "marca": "Renault",
+        "ano": 2008
+    },
+    {
+        "id": 2,
+        "placa": "LLX8155",
+        "chassi": "8gEPb2uYw3Xv21956",
+        "renavam": "09785274964",
+        "modelo": "Polo GTI",
+        "marca": "Volkswagen",
+        "ano": 2017
+    }
+]
