@@ -1,0 +1,50 @@
+<div class="flex justify-content-center pt-2">
+  <div class="flex flex-column">
+    <div class="flex justify-content-end">
+      <p-button label="Adicionar veiculo" (click)="navigate()"><i class="pi pi-plus pr-2"></i></p-button>
+    </div>
+    <div class="flex pt-2"></div>
+    <p-table [value]="listaDeVeiculos" responsiveLayout="stack" [breakpoint]="'960px'" [tableStyle]="tabStyle" [paginator]="true" [rows]="5"
+      [showCurrentPageReport]="true" currentPageReportTemplate="Exibindo {first} ate {last} de {totalRecords} registros"
+      [rowsPerPageOptions]="[5, 10, 20]">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Id</th>
+          <th>Placa</th>
+          <th>Chassi</th>
+          <th>Renavam</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Ano</th>
+          <th>Editar</th>
+          <th>Apagar</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-veiculos>
+        <tr>
+          <td>{{ veiculos.id }}</td>
+          <td>{{ veiculos.placa }}</td>
+          <td>{{ veiculos.chassi }}</td>
+          <td>{{ veiculos.renavam }}</td>
+          <td>{{ veiculos.modelo }}</td>
+          <td>{{ veiculos.marca }}</td>
+          <td>{{ veiculos.ano }}</td>
+          <td><p-button (click)="navigate(veiculos.id)">
+              <span class="pi pi-pencil"></span>
+            </p-button></td>
+          <td><p-button severity="danger" (click)="deleteVeiculos(veiculos.id)">
+              <span class="pi pi-trash"></span>
+            </p-button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+
+      </ng-template>
+    </p-table>
+    <p-toast position="bottom-right"></p-toast>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="flex justify-content-end flex-wrap">
+    <p-button label="Voltar" [text]="true" (onClick)="back()"><i class="pi pi-arrow-left pr-2"></i></p-button>
+</div>
+
+<div class="flex justify-content-center ">
+    <div class="flex flex-column w-8">
+        <div class="flex align-items-center">
+            <h1 *ngIf="!isEdit" class="w-8">Adicionar veiculo</h1>
+            <h1 *ngIf="isEdit" class="w-8">Atualizar veiculo</h1>
+        </div>
+        <div class="flex align-items-center">
+            <form [formGroup]="frotaForm" #formDir="ngForm">
+                <div class="formgrid grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="placa">Placa</label>
+                        <input type="text" id="placa" pInputText formControlName="placa"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" />
+                        <div *ngIf="frotaForm.get('placa')?.errors?.['required'] && frotaForm.get('placa')?.touched"
+                            class="text-red-500 text-xs font-semibold pt-1">
+                            A placa é obrigatória
+                        </div>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="chassi">Chassi</label>
+                        <input type="text" id="chassi" formControlName="chassi"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                            required />
+                        <div *ngIf="frotaForm.get('chassi')?.errors?.['required'] && frotaForm.get('chassi')?.touched"
+                            class="text-red-500 text-xs font-semibold pt-1">
+                            O chassi é obrigatório
+                        </div>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="renavam">Renavam</label>
+                        <input type="text" id="renavam" pInputText formControlName="renavam"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                            required />
+                        <div *ngIf="frotaForm.get('renavam')?.errors?.['required'] && frotaForm.get('renavam')?.touched"
+                            class="text-red-500 text-xs font-semibold pt-1">
+                            O renavam é obrigatório
+                        </div>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" id="modelo" pInputText formControlName="modelo"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                            required />
+                        <div *ngIf="frotaForm.get('modelo')?.errors?.['required'] && frotaForm.get('modelo')?.touched"
+                            class="text-red-500 text-xs font-semibold pt-1">
+                            O modelo é obrigatório
+                        </div>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="marca">Marca</label>
+                        <input type="text" id="marca" pInputText formControlName="marca"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                            required />
+                        <div *ngIf="frotaForm.get('marca')?.errors?.['required'] && frotaForm.get('marca')?.touched"
+                            class="text-red-500 text-xs font-semibold pt-1">
+                            A marca é obrigatória
+                        </div>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="ano">Ano</label>
+                        <input type="text" id="ano" pInputText formControlName="ano"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                            required />
+                        <div *ngIf="frotaForm.get('ano')?.errors?.['required'] && frotaForm.get('ano')?.touched"
+                            class="text-red-500 text-xs font-semibold pt-1">
+                            O ano é obrigatório
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!isEdit" class="flex justify-content-end flex-wrap">
+                    <p-button (click)="submit()" severity="success" label="Gravar"></p-button>
+                </div>
+                <div *ngIf="isEdit" class="flex justify-content-end flex-wrap">
+                    <p-button (click)="submit()" severity="success" label="Atualizar"></p-button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <p-toast position="bottom-right"></p-toast>
+</div>
