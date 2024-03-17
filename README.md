@@ -3,7 +3,7 @@ CRUD feito com Angular, PrimeNG e Node.js
 
 Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 17.3.0 e [Node.js](https://nodejs.org/en/download) versão 20.11.1
 
-## Instalção do projeto
+## Instalação do projeto
 
 Após a clonagem do repósitório, acesse via terminal as pastas `controle-frota` e `data-server` e execute o comando `npm install` em cada pasta.
 
