@@ -4,19 +4,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 Front-end
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
 Back-end
-Run `node run dev` for a dev server. Navigate to `http://localhost:3000/`.
+- Run `node run dev` for a dev server. Navigate to `http://localhost:3000/`.
 
 # Dependencias instaladas
-- Front-end
-[PrimeNG](https://primeng.org/installation)
+Front-end
+- [PrimeNG](https://primeng.org/installation)
 
-- Back-end
-[Express.js](https://expressjs.com/en/starter/installing.html)
-[Nodemon](https://github.com/remy/nodemon)
-[Cors](https://github.com/expressjs/cors)
+Back-end
+- [Express.js](https://expressjs.com/en/starter/installing.html)
+- [Nodemon](https://github.com/remy/nodemon)
+- [Cors](https://github.com/expressjs/cors)
 
 # Sobre o projeto Controle de Frota
 
