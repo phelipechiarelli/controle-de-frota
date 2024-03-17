@@ -3,7 +3,11 @@ CRUD feito com Angular, PrimeNG e Node.js
 
 Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 17.3.0 e [Node.js](https://nodejs.org/en/download) versão 20.11.1
 
-## Development server
+## Instalção do projeto
+
+Após a clonagem do repósitório, acesse via terminal as pastas `controle-frota` e `data-server` e execute o comando `npm install`
+
+## Servidores de desenvolvimento
 Front-end
 
 Execute o comando `ng serve` ou `npx ng serve` para subir o servidor de desenvolvimento. Aceesse a url `http://localhost:4200/` para acessar o projeto. 
