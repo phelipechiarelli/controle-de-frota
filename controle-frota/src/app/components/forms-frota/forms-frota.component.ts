@@ -43,7 +43,6 @@ export class FormsFrotaComponent implements OnDestroy {
 
     this.formBehavior = this.veiculosService.hasId.subscribe(param => {
       this.isEdit = param > 0 ? true : false;
-      console.log('edit', this.isEdit)
       if (param > 0) {
         this.veiculoId = param;
         this.veiculosService.getVeiculoPorId(param).subscribe({
@@ -91,11 +90,8 @@ export class FormsFrotaComponent implements OnDestroy {
   }
 
   submit() {
-    console.log('CHAMOU SUBMIT')
     this.frotaForm?.markAllAsTouched();
-    console.log('Formulário válido:', this.frotaForm?.valid);
     if (this.frotaForm?.valid) {
-      console.log('ENTROU NO TESTE')
       this.isEdit ? this.updateVeiculo(this.veiculoId, this.frotaForm?.value) : this.createVeiculo(this.frotaForm?.value);
     }
   }
@@ -103,7 +99,6 @@ export class FormsFrotaComponent implements OnDestroy {
   gerarNovoId() {
     const rawNum = Math.random();
     this.novoVeiculoId = Math.floor(rawNum * 1000000);
-    console.log('this.novoVeiculoId', this.novoVeiculoId)
   }
 
   showCreateVeiculoToast() {
