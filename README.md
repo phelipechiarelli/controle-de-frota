@@ -5,7 +5,7 @@ Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 
 ## Instalção do projeto
 
-Após a clonagem do repósitório, acesse via terminal as pastas `controle-frota` e `data-server` e execute o comando `npm install`
+Após a clonagem do repósitório, acesse via terminal as pastas `controle-frota` e `data-server` e execute o comando `npm install` em cada pasta.
 
 ## Servidores de desenvolvimento
 Front-end
@@ -14,7 +14,7 @@ Execute o comando `ng serve` ou `npx ng serve` para subir o servidor de desenvol
 
 Back-end
 
-Execute o comando `node run dev` para subir o servidor de desenvolvimento. Aceesse a url `http://localhost:3000/` para acessar o projeto.
+Execute o comando `node run dev` para subir o servidor de desenvolvimento. Aceesse a url `http://localhost:3000/` para acessar os dados do projeto.
 
 # Dependencias instaladas
 Front-end
