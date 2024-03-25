@@ -8,6 +8,7 @@ import { VeiculosService } from '../../services/veiculos.service';
 import { Subscription } from 'rxjs';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { VeiculoInterface } from '../../interfaces/VeiculoInterface'
 
 @Component({
   selector: 'app-forms-frota',
@@ -22,9 +23,8 @@ export class FormsFrotaComponent implements OnDestroy {
   frotaForm: FormGroup;
   isEdit!: boolean;
   formBehavior: Subscription = new Subscription;
-  countListaVeiculo: Subscription = new Subscription;
   veiculoId: number = 0;
-  novoVeiculoId: any;
+  novoVeiculoId: number = 0;
 
 
   constructor(private route: Router, private veiculosService: VeiculosService, private formBuilder: FormBuilder, private messageService: MessageService) {
@@ -109,33 +109,24 @@ export class FormsFrotaComponent implements OnDestroy {
     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Veículo atualizado com sucesso' });
   }
 
-  createVeiculo(body: any) {
+  async createVeiculo(body: VeiculoInterface) {
     this.gerarNovoId();
     const veiculoBody = {
-      id: this.novoVeiculoId,
-      ...body
+      ...body,
+      id: this.novoVeiculoId
     }
-    this.veiculosService.createVeiculo(veiculoBody).subscribe({
-      next: (value) => {
-
-      },
-      error: (err) => {
-        console.error(err)
-      },
-    });
-    this.showCreateVeiculoToast();
-    this.back();
+    this.veiculosService.createVeiculo(veiculoBody).subscribe( () => {
+        this.showCreateVeiculoToast();
+        this.back() 
+    })
   }
 
-  updateVeiculo(id: number, body: any) {
+  updateVeiculo(id: number, body: VeiculoInterface) {
     const veiculoBody = {
       ...body,
       id: id
     }
     this.veiculosService.updateVeiculo(id, veiculoBody).subscribe({
-      next: (value) => {
-
-      },
       error: (err) => {
         console.error(err)
       },

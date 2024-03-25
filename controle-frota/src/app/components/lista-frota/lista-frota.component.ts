@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
 import { VeiculosService } from '../../services/veiculos.service';
 import { Subscription } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
+import { VeiculoInterface } from '../../interfaces/VeiculoInterface';
+import { SystemMessageService } from '../../services/system-message.service';
+import { SystemMessageEnum } from '../../models/system-message.enum';
+import { SystemMessageTypeEnum } from '../../models/system-message-type.enum';
+import { SystemMessageSummaryEnum } from '../../models/system-message-summary.enum';
 
 @Component({
   selector: 'app-lista-frota',
@@ -14,14 +19,14 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [TableModule, ButtonModule, HttpClientModule, ToastModule], 
   templateUrl: './lista-frota.component.html',
   styleUrl: './lista-frota.component.scss',
-  providers: [MessageService]
+  providers: [MessageService, SystemMessageService]
 })
 export class ListaFrotaComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  listaDeVeiculos: any[] = [];
+  listaDeVeiculos: VeiculoInterface[] = [];
   tabStyle = { 'min-width': '70rem' }
 
-  constructor(private router: Router, private veiculosService: VeiculosService, private messageService: MessageService) {
+  constructor(private router: Router, private veiculosService: VeiculosService, private messageService: MessageService, private systemMessageService: SystemMessageService) {
     this.subscription = new Subscription;
   }
 
@@ -44,25 +49,24 @@ export class ListaFrotaComponent implements OnInit, OnDestroy {
   }
 
   getListaVeiculos() {
-    this.subscription = this.veiculosService.getVeiculos().subscribe((veiculos) => {
-      this.listaDeVeiculos = veiculos;
+    this.subscription = this.veiculosService.getVeiculos().subscribe({
+      next: veiculos => {
+        this.listaDeVeiculos = veiculos
+      },
+      error: err => {
+        this.systemMessageService.systemMessageService(SystemMessageTypeEnum.ERROR, SystemMessageSummaryEnum.ERROR, SystemMessageEnum.ERR_GET_LISTA_VEICULO); 
+      }
     })
-  }
-
-  showDeleteToast() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Veículo excluído com sucesso' });
   }
 
   deleteVeiculos(id: number) {
     this.veiculosService.deleteVeiculo(id).subscribe({
-      next: (value) => {
-      },
       error: (error) => {
-        console.error('Erro ao excluir veículo:', error);
+        this.systemMessageService.systemMessageService(SystemMessageTypeEnum.ERROR, SystemMessageSummaryEnum.ERROR, SystemMessageEnum.ERR_DELETE_VEICULO);
       }
     });
     this.getListaVeiculos();
-    this.showDeleteToast(); 
+    this.systemMessageService.systemMessageService(SystemMessageTypeEnum.SUCCESS, SystemMessageSummaryEnum.SUCCESS, SystemMessageEnum.DELETE_VEICULO);
   }
 
   ngOnDestroy(): void {

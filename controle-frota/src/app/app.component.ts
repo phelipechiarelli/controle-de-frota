@@ -4,6 +4,8 @@ import { ListaFrotaComponent } from "./components/lista-frota/lista-frota.compon
 import { HeaderComponent } from "./components/header/header.component";
 import { VeiculosService } from './services/veiculos.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SystemMessageService } from './services/system-message.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     imports: [RouterOutlet, ListaFrotaComponent, HeaderComponent],
-    providers:[VeiculosService, HttpClient, HttpClientModule]
+    providers:[VeiculosService, SystemMessageService, MessageService, HttpClient, HttpClientModule]
 })
 export class AppComponent {
   title = 'controle-frota';
