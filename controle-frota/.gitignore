@@ -1,0 +1,5 @@
+# Diretório de dependências
+/node_modules/
+
+# Arquivos de compilação
+/build/
